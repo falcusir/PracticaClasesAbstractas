@@ -42,16 +42,17 @@ public class Cuadrado extends FigurasGeometricas {
     }
 
     @Override
-    public void calcularArea() {
+    public double calcularArea() {
         setArea(getLado()*getLado()+ "");
-        System.out.println("El área es: "+ getArea());
+        double a= Double.parseDouble(getArea());
+        return a;
 
     }
 
     @Override
-    public void calcularPerimetro() {
+    public double calcularPerimetro() {
         setPerimetro(getLado()*4+ "");
-        System.out.println("El perímetro es: " + getPerimetro());
+        return Double.parseDouble(getPerimetro());
 
     }
 

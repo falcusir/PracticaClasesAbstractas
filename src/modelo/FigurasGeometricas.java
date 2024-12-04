@@ -55,8 +55,8 @@ public abstract class FigurasGeometricas {
 
     }
     // en una clase tradicional aumento un método abstracto-- solo declarado
-    public abstract void calcularArea();
-    public abstract void calcularPerimetro();
+    public abstract double calcularArea();
+    public abstract double calcularPerimetro();
     
     
     

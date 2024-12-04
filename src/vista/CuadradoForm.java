@@ -4,12 +4,14 @@
  */
 package vista;
 
+import modelo.Cuadrado;
+
 /**
  *
  * @author Dell Core i7
  */
 public class CuadradoForm extends javax.swing.JFrame {
-
+    Cuadrado c1 = new Cuadrado();
     /**
      * Creates new form CuadradoForm
      */
@@ -26,21 +28,98 @@ public class CuadradoForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lblTitulo = new javax.swing.JLabel();
+        lblMensaje = new javax.swing.JLabel();
+        txtLado = new javax.swing.JTextField();
+        btnArea = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtAResultados = new javax.swing.JTextArea();
+        btnPerimetro = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        lblTitulo.setFont(new java.awt.Font("Serif", 1, 24)); // NOI18N
+        lblTitulo.setText("CUADRADO");
+
+        lblMensaje.setText("Ingrese el lado: ");
+
+        btnArea.setText("Calcular Área ");
+        btnArea.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAreaActionPerformed(evt);
+            }
+        });
+
+        txtAResultados.setColumns(20);
+        txtAResultados.setRows(5);
+        jScrollPane1.setViewportView(txtAResultados);
+
+        btnPerimetro.setText("Calcular Perímetro");
+        btnPerimetro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPerimetroActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(48, 48, 48)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lblMensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnPerimetro)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnArea)
+                                .addGap(16, 16, 16)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtLado, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(121, 121, 121)
+                        .addComponent(lblTitulo)))
+                .addContainerGap(80, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(lblTitulo)
+                .addGap(23, 23, 23)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblMensaje)
+                    .addComponent(txtLado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(39, 39, 39)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnArea)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(3, 3, 3)
+                .addComponent(btnPerimetro)
+                .addContainerGap(78, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnAreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAreaActionPerformed
+        // TODO add your handling code here:
+        
+        //toma el valor ingresado en el txt y lo transforma de cadena a double 
+        c1.setLado(Double.parseDouble(txtLado.getText()));
+        txtAResultados.setText("El área es: "+ c1.calcularArea()+ "");
+
+    }//GEN-LAST:event_btnAreaActionPerformed
+
+    private void btnPerimetroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPerimetroActionPerformed
+        // TODO add your handling code here:
+        c1.setLado(Double.parseDouble(txtLado.getText()));
+        txtAResultados.setText("El perímetro es: "+ c1.calcularPerimetro() + "");
+        
+    }//GEN-LAST:event_btnPerimetroActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +157,12 @@ public class CuadradoForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnArea;
+    private javax.swing.JButton btnPerimetro;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblMensaje;
+    private javax.swing.JLabel lblTitulo;
+    private javax.swing.JTextArea txtAResultados;
+    private javax.swing.JTextField txtLado;
     // End of variables declaration//GEN-END:variables
 }
