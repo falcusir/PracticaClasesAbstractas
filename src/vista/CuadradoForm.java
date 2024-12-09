@@ -12,6 +12,7 @@ import modelo.Cuadrado;
  */
 public class CuadradoForm extends javax.swing.JFrame {
     Cuadrado c1 = new Cuadrado();
+    
     /**
      * Creates new form CuadradoForm
      */
@@ -35,14 +36,24 @@ public class CuadradoForm extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         txtAResultados = new javax.swing.JTextArea();
         btnPerimetro = new javax.swing.JButton();
+        btnImprimir = new javax.swing.JButton();
+        btnBorrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        lblTitulo.setFont(new java.awt.Font("Serif", 1, 24)); // NOI18N
+        lblTitulo.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 1, 48)); // NOI18N
+        lblTitulo.setForeground(new java.awt.Color(0, 0, 102));
         lblTitulo.setText("CUADRADO");
 
+        lblMensaje.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
+        lblMensaje.setForeground(new java.awt.Color(0, 0, 102));
         lblMensaje.setText("Ingrese el lado: ");
 
+        txtLado.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
+
+        btnArea.setBackground(new java.awt.Color(204, 255, 204));
+        btnArea.setFont(new java.awt.Font("Segoe UI Symbol", 1, 14)); // NOI18N
+        btnArea.setForeground(new java.awt.Color(0, 0, 102));
         btnArea.setText("Calcular Área ");
         btnArea.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -50,14 +61,36 @@ public class CuadradoForm extends javax.swing.JFrame {
             }
         });
 
+        txtAResultados.setBackground(new java.awt.Color(204, 255, 255));
         txtAResultados.setColumns(20);
+        txtAResultados.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtAResultados.setRows(5);
         jScrollPane1.setViewportView(txtAResultados);
 
+        btnPerimetro.setBackground(new java.awt.Color(204, 255, 204));
+        btnPerimetro.setFont(new java.awt.Font("Segoe UI Symbol", 1, 14)); // NOI18N
         btnPerimetro.setText("Calcular Perímetro");
         btnPerimetro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPerimetroActionPerformed(evt);
+            }
+        });
+
+        btnImprimir.setBackground(new java.awt.Color(204, 255, 204));
+        btnImprimir.setFont(new java.awt.Font("Segoe UI Symbol", 1, 14)); // NOI18N
+        btnImprimir.setText("Imprimir Datos");
+        btnImprimir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnImprimirActionPerformed(evt);
+            }
+        });
+
+        btnBorrar.setBackground(new java.awt.Color(204, 204, 255));
+        btnBorrar.setFont(new java.awt.Font("Segoe UI Symbol", 1, 14)); // NOI18N
+        btnBorrar.setText("Borrar");
+        btnBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBorrarActionPerformed(evt);
             }
         });
 
@@ -66,40 +99,47 @@ public class CuadradoForm extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(54, 54, 54)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblTitulo)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(48, 48, 48)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(lblMensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnPerimetro)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnArea)
-                                .addGap(16, 16, 16)))
+                        .addComponent(lblMensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtLado, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(121, 121, 121)
-                        .addComponent(lblTitulo)))
-                .addContainerGap(80, Short.MAX_VALUE))
+                        .addComponent(txtLado, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addComponent(btnBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(21, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btnArea)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnPerimetro)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnImprimir)
+                .addGap(36, 36, 36))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(110, 110, 110))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
+                .addGap(29, 29, 29)
                 .addComponent(lblTitulo)
-                .addGap(23, 23, 23)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblMensaje)
-                    .addComponent(txtLado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(39, 39, 39)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtLado, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnArea)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(3, 3, 3)
-                .addComponent(btnPerimetro)
-                .addContainerGap(78, Short.MAX_VALUE))
+                    .addComponent(btnPerimetro)
+                    .addComponent(btnImprimir))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
         pack();
@@ -110,16 +150,32 @@ public class CuadradoForm extends javax.swing.JFrame {
         
         //toma el valor ingresado en el txt y lo transforma de cadena a double 
         c1.setLado(Double.parseDouble(txtLado.getText()));
-        txtAResultados.setText("El área es: "+ c1.calcularArea()+ "");
+        //  transformar de double a string
+        txtAResultados.append("El área es: "+ c1.calcularArea()+ ""+ "\n");
 
     }//GEN-LAST:event_btnAreaActionPerformed
 
     private void btnPerimetroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPerimetroActionPerformed
         // TODO add your handling code here:
         c1.setLado(Double.parseDouble(txtLado.getText()));
-        txtAResultados.setText("El perímetro es: "+ c1.calcularPerimetro() + "");
+        //CONCATENA EL RESUTADO ANTERIOR CON EL ACTUAL
+        txtAResultados.append("El perímetro es: "+ c1.calcularPerimetro() + ""+"\n");
         
     }//GEN-LAST:event_btnPerimetroActionPerformed
+
+    private void btnImprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImprimirActionPerformed
+        // TODO add your handling code here:
+        c1.setNombre("Cuadrado");
+        txtAResultados.setText(c1.toString());
+    }//GEN-LAST:event_btnImprimirActionPerformed
+
+    private void btnBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarActionPerformed
+        // TODO add your handling code here:
+        txtLado.setText(c1.borrar());
+        
+        txtAResultados.setText(c1.borrar());
+        
+    }//GEN-LAST:event_btnBorrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -158,6 +214,8 @@ public class CuadradoForm extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnArea;
+    private javax.swing.JButton btnBorrar;
+    private javax.swing.JButton btnImprimir;
     private javax.swing.JButton btnPerimetro;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblMensaje;

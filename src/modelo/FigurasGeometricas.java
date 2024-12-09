@@ -54,9 +54,15 @@ public abstract class FigurasGeometricas {
                 "Perímetro: " + getPerimetro();
 
     }
+    
+    public String borrar(){
+        return " ";
+    
+    };
     // en una clase tradicional aumento un método abstracto-- solo declarado
     public abstract double calcularArea();
     public abstract double calcularPerimetro();
+    
     
     
     

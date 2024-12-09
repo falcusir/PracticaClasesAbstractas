@@ -34,8 +34,9 @@ public class Cuadrado extends FigurasGeometricas {
 
     @Override
     public String toString() {
-        return "DATOS DEL CUADRADO \n"
-                + "Nombre: " + getNombre() + "\n"
+        //setNombre("Cuadrado");
+        return "DATOS DE LA FIGURA \n"
+                + "\n" + "Nombre: " + getNombre() + "\n"
                 + "Lado: " + getLado() + "\n"
                 + "Área: " + getArea() + "\n"
                 + "Perímetro: " + getPerimetro();
@@ -56,4 +57,6 @@ public class Cuadrado extends FigurasGeometricas {
 
     }
 
+    
+    
 }
