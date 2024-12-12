@@ -143,11 +143,12 @@
       <Properties>
         <Property name="editable" type="boolean" value="true"/>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="4">
-            <StringItem index="0" value="Cuadrado"/>
+          <StringArray count="5">
+            <StringItem index="0" value="--seleccione--"/>
             <StringItem index="1" value="Rect&#xe1;ngulo"/>
             <StringItem index="2" value="Tri&#xe1;ngulo"/>
-            <StringItem index="3" value="C&#xed;rculo"/>
+            <StringItem index="3" value="Cuadrado"/>
+            <StringItem index="4" value="C&#xed;rculo"/>
           </StringArray>
         </Property>
       </Properties>

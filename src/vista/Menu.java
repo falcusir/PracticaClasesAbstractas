@@ -4,6 +4,8 @@
  */
 package vista;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Dell Core i7
@@ -62,7 +64,7 @@ public class Menu extends javax.swing.JFrame {
         lblTitulo2.setText("PROGRAMACIÓN ORIENTADA A OBJETOS");
 
         jcbMenuFiguras.setEditable(true);
-        jcbMenuFiguras.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cuadrado", "Rectángulo", "Triángulo", "Círculo" }));
+        jcbMenuFiguras.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--seleccione--", "Rectángulo", "Triángulo", "Cuadrado", "Círculo" }));
         jcbMenuFiguras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jcbMenuFigurasActionPerformed(evt);
@@ -141,10 +143,24 @@ public class Menu extends javax.swing.JFrame {
     private void jcbMenuFigurasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbMenuFigurasActionPerformed
             // TODO add your handling code here:
             
+        //Muestra un mensaje de la opción escogida    
         String mensaje = "La figura elegida es: ";
         mensaje = mensaje + jcbMenuFiguras.getSelectedItem().toString();
         txtAMensaje.setText(mensaje);
-
+       //Para que muestre otro fromulario segun la seleccion del combo box
+        //instancia el objeto cuadrado
+        CuadradoForm c1= new CuadradoForm();
+        if(jcbMenuFiguras.getSelectedItem().toString().equals("--seleccione--")){
+            txtAMensaje.setText("Debe elegir una Figura Geométrica");}
+        else
+            if(jcbMenuFiguras.getSelectedItem().toString().equals("Cuadrado")){
+               c1.setVisible(true);
+               this.dispose();}
+            else
+                txtAMensaje.setText(mensaje);
+    
+        
+        
         
     }//GEN-LAST:event_jcbMenuFigurasActionPerformed
 
