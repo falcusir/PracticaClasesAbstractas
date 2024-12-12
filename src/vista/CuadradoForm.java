@@ -171,8 +171,7 @@ public class CuadradoForm extends javax.swing.JFrame {
 
     private void btnBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarActionPerformed
         // TODO add your handling code here:
-        txtLado.setText(c1.borrar());
-        
+        txtLado.setText(c1.borrar());      
         txtAResultados.setText(c1.borrar());
         
     }//GEN-LAST:event_btnBorrarActionPerformed

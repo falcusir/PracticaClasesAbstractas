@@ -34,32 +34,40 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="33" max="32767" attributes="0"/>
               <Component id="lblSubtitulo" min="-2" pref="223" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="123" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="217" max="-2" attributes="0"/>
           </Group>
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="156" max="-2" attributes="0"/>
-                      <Component id="lblTitulo" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="156" max="-2" attributes="0"/>
+                          <Component id="lblTitulo" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
+                          <Component id="lblTitulo2" min="-2" pref="338" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="lblEscogerOpcion" max="32767" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="jcbMenuFiguras" min="-2" pref="140" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="btnClaseAbstracta" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
-                      <Component id="lblTitulo2" min="-2" pref="338" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
-                      <Component id="btnClaseAbstracta" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
-                      <Component id="cbFiguras" min="-2" pref="140" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="117" max="-2" attributes="0"/>
-                      <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" pref="254" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="63" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -72,13 +80,16 @@
               <Component id="lblTitulo2" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="lblSubtitulo" min="-2" pref="46" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="btnClaseAbstracta" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="24" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="btnClaseAbstracta" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="cbFiguras" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jcbMenuFiguras" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblEscogerOpcion" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="18" max="32767" attributes="0"/>
-              <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="jScrollPane1" min="-2" pref="67" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -128,18 +139,20 @@
         <Property name="text" type="java.lang.String" value="PROGRAMACI&#xd3;N ORIENTADA A OBJETOS"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="cbFiguras">
+    <Component class="javax.swing.JComboBox" name="jcbMenuFiguras">
       <Properties>
+        <Property name="editable" type="boolean" value="true"/>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="3">
+          <StringArray count="4">
             <StringItem index="0" value="Cuadrado"/>
             <StringItem index="1" value="Rect&#xe1;ngulo"/>
             <StringItem index="2" value="Tri&#xe1;ngulo"/>
+            <StringItem index="3" value="C&#xed;rculo"/>
           </StringArray>
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbFigurasActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jcbMenuFigurasActionPerformed"/>
       </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -152,7 +165,7 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
-        <Component class="javax.swing.JTextArea" name="txtResultados">
+        <Component class="javax.swing.JTextArea" name="txtAMensaje">
           <Properties>
             <Property name="columns" type="int" value="20"/>
             <Property name="rows" type="int" value="5"/>
@@ -160,5 +173,13 @@
         </Component>
       </SubComponents>
     </Container>
+    <Component class="javax.swing.JLabel" name="lblEscogerOpcion">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="12" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Escoja una Figura Geom&#xe9;trica: "/>
+      </Properties>
+    </Component>
   </SubComponents>
 </Form>
