@@ -71,6 +71,7 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
+        txtAMensaje.setBackground(new java.awt.Color(204, 255, 204));
         txtAMensaje.setColumns(20);
         txtAMensaje.setRows(5);
         jScrollPane1.setViewportView(txtAMensaje);
@@ -125,8 +126,8 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(jcbMenuFiguras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblEscogerOpcion))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17))
         );
 
         pack();
@@ -155,7 +156,8 @@ public class Menu extends javax.swing.JFrame {
         else
             if(jcbMenuFiguras.getSelectedItem().toString().equals("Cuadrado")){
                c1.setVisible(true);
-               this.dispose();}
+               this.dispose();
+               }
             else
                 txtAMensaje.setText(mensaje);
     
